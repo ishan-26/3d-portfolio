@@ -27,5 +27,4 @@ To set up the project locally, follow these steps:
    npm install @emailjs/browser
    npm install react-tilt
    npm i framer-motion
-  
    
