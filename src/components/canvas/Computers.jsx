@@ -59,14 +59,19 @@ const ComputersCanvas = () => {
     };
   }, []);
 
+  // Conditional rendering of the Canvas
+  if (isMobile) {
+    return null; // Return null to hide the canvas on mobile
+  }
+
   return (
     <Canvas
       frameloop='demand'
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}>
-
+      gl={{ preserveDrawingBuffer: true }}
+    >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
@@ -75,7 +80,6 @@ const ComputersCanvas = () => {
           onStart={() => setAutoRotate(false)} // Disable auto-rotation on interaction
           onEnd={() => setAutoRotate(true)} // Re-enable auto-rotation when interaction ends
         />
-
         <Computers isMobile={isMobile} autoRotate={autoRotate} />
       </Suspense>
 
