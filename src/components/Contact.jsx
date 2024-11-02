@@ -16,7 +16,7 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
   
-  const emailJSPublicKey = import.meta.env.EMAILJS_PUBLIC_KEY;
+  const emailJSPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
   
   const handleChange = (e) => {
     const { target } = e;
@@ -34,8 +34,8 @@ const Contact = () => {
 
     emailjs
       .send(
-        import.meta.env.EMAILJS_SERVICE_ID,
-        import.meta.env.EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "Ishan Dhotre",
