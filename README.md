@@ -1,8 +1,31 @@
-# React + Vite
+# 🌟 Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my portfolio website! This project showcases my skills and projects in software development, including web development, AI applications, and more. 🚀
 
-Currently, two official plugins are available:
+## ⚙️ Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend:**
+  - React ⚛️
+  - Tailwind CSS 🎨
+  - Three.js 🌌
+    
+## 🌟 Features
+
+- Responsive design for optimal viewing on different devices 📱💻.
+- Interactive 3D elements using Three.js ✨.
+- Auto-typing effect for engaging text presentation ⌨️.
+- Smooth scrolling effects for navigation 🌀.
+- Project showcase with descriptions and links 📂.
+
+## 📥 Libraries used
+
+To set up the project locally, follow these steps:
+
+   ```bash
+   npm install --legacy--peer-deps three          
+   npm install typewriter-effect
+   npm install @emailjs/browser
+   npm install react-tilt
+   npm i framer-motion
+  
+   
