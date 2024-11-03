@@ -10,24 +10,15 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  let timer; // Declare timer for debouncing
+  let timer;
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-
-      // Manage navbar background color based on scroll position
       setScrolled(scrollTop > 100);
-
-      // Control navbar visibility based on scroll direction
-      if (scrollTop > lastScrollY) {
-        setIsVisible(false); // Hide navbar on scroll down
-      } else {
-        setIsVisible(true); // Show navbar on scroll up
-      }
+      setIsVisible(scrollTop <= lastScrollY);
       setLastScrollY(scrollTop);
 
-      // Debounce the active link update
       clearTimeout(timer);
       timer = setTimeout(() => {
         navLinks.forEach((nav) => {
@@ -35,27 +26,24 @@ const Navbar = () => {
           if (section) {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-
             if (scrollTop >= sectionTop - sectionHeight / 3 && scrollTop < sectionTop + sectionHeight) {
               setActive(nav.title);
             }
           }
         });
-      }, 100); // Adjust delay as needed
+      }, 100);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      clearTimeout(timer); // Clear the timer on cleanup
+      clearTimeout(timer);
     };
   }, [lastScrollY]);
 
   return (
     <nav
-      className={${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 transition-transform duration-300 ${
-        scrolled ? "bg-primary" : "bg-transparent"
-      } ${isVisible ? "translate-y-0" : "-translate-y-full"}}
+      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 transition-transform duration-300 ${scrolled ? "bg-primary" : "bg-transparent"} ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link
@@ -74,11 +62,10 @@ const Navbar = () => {
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={${active === nav.title ? "text-white" : "text-secondary"} hover:text-white
-                          text-[18px] font-medium cursor-pointer}
+              className={`${active === nav.title ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
-              <a href={#${nav.id}}>{nav.title}</a>
+              <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
         </ul>
@@ -92,23 +79,19 @@ const Navbar = () => {
           />
 
           <div
-            className={${
-              !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl}
+            className={`${!toggle ? "hidden" : "flex"} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
-                  }}
+                  className={`font-poppins font-medium cursor-pointer text-[16px] ${active === nav.title ? "text-white" : "text-secondary"}`}
                   onClick={() => {
                     setToggle(!toggle);
                     setActive(nav.title);
                   }}
                 >
-                  <a href={#${nav.id}}>{nav.title}</a>
+                  <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
             </ul>
