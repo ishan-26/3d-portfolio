@@ -45,7 +45,7 @@ const ComputersCanvas = () => {
   const [autoRotate, setAutoRotate] = useState(true);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
     setIsMobile(mediaQuery.matches);
 
     const handleMediaQueryChange = (event) => {
@@ -59,10 +59,10 @@ const ComputersCanvas = () => {
     };
   }, []);
 
-  // Conditional rendering of the Canvas
+  // Render the Canvas only if not on mobile
+  if (isMobile) return null;
 
-
-  return (
+ return (
     <Canvas
       frameloop='demand'
       shadows
@@ -75,15 +75,15 @@ const ComputersCanvas = () => {
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
-          onStart={() => setAutoRotate(false)} // Disable auto-rotation on interaction
-          onEnd={() => setAutoRotate(true)} // Re-enable auto-rotation when interaction ends
+          onStart={() => setAutoRotate(false)}
+          onEnd={() => setAutoRotate(true)}
         />
         <Computers isMobile={isMobile} autoRotate={autoRotate} />
       </Suspense>
 
       <Preload all />
     </Canvas>
-  );
-};
+);
+}
 
 export default ComputersCanvas;
