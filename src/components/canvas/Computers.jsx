@@ -60,9 +60,7 @@ const ComputersCanvas = () => {
   }, []);
 
   // Conditional rendering of the Canvas
-  if (isMobile) {
-    return null; // Return null to hide the canvas on mobile
-  }
+
 
   return (
     <Canvas
