@@ -2,6 +2,7 @@ import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
+import bg from "../../assets/bg6.jpg"
 
 const Stars = (props) => {
   const ref = useRef();
@@ -29,13 +30,22 @@ const Stars = (props) => {
 
 const StarsCanvas = () => {
   return (
-    <div className='hidden sm:block w-full h-auto absolute inset-0 z-[-1]'>
-      <Canvas camera={{ position: [0, 0, 1] }}>
-        <Suspense fallback={null}>
-          <Stars />
-        </Suspense>
-        <Preload all />
-      </Canvas>
+    <div className='absolute inset-0 w-full h-full z-[-1]'>
+      {/* Display an image background on mobile screens */}
+      <img
+        src={bg} // Replace with your image path
+        className="block sm:hidden w-full h-full object-cover"
+      />
+
+      {/* Display the 3D stars on larger screens */}
+      <div className="hidden sm:block w-full h-full">
+        <Canvas camera={{ position: [0, 0, 1] }}>
+          <Suspense fallback={null}>
+            <Stars />
+          </Suspense>
+          <Preload all />
+        </Canvas>
+      </div>
     </div>
   );
 };
