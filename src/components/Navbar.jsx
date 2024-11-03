@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+  import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -70,24 +70,22 @@ const Navbar = () => {
           {/* <img src={logo} alt='logo' className='px-0 w-12 h-12 object-contain' /> */}
         </Link>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
-          {navLinks.map((nav) => (
-            <li
-              key={nav.id}
-              className={`${active === nav.title ? "text-white" : "text-secondary"} hover:text-white
-                          text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(nav.title)}
-            >
-              <a  {nav.id === "resume" ? (
-        <a href="path_to_your_resume.pdf" target="_blank" rel="noopener noreferrer">
-          {nav.title}
-        </a>
-      ) : (
+           <ul className='list-none hidden sm:flex flex-row gap-10'>
+  {navLinks.map((nav) => (
+    <li
+      key={nav.id}
+      className={`${active === nav.title ? "text-white" : "text-secondary"} hover:text-white
+                  text-[18px] font-medium cursor-pointer`}
+      onClick={() => setActive(nav.title)}
+    >
+      {nav.id === "resume" ? (
         <a href={`#${nav.id}`}>{nav.title}</a>
+      ) : (
+        <span>{nav.title}</span>
       )}
-            </li>
-          ))}
-        </ul>
+    </li>
+  ))}
+</ul>
 
         <div className='sm:hidden flex justify-end items-center'>
           <img
