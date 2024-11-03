@@ -78,7 +78,13 @@ const Navbar = () => {
                           text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a  {nav.id === "resume" ? (
+        <a href="path_to_your_resume.pdf" target="_blank" rel="noopener noreferrer">
+          {nav.title}
+        </a>
+      ) : (
+        <a href={`#${nav.id}`}>{nav.title}</a>
+      )}
             </li>
           ))}
         </ul>
