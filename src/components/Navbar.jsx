@@ -79,9 +79,11 @@ const Navbar = () => {
       onClick={() => setActive(nav.title)}
     >
       {nav.id === "resume" ? (
-        <a href={`#${nav.id}`}>{nav.title}</a>
+        <Link to="https://drive.google.com/file/d/1DYHw0PQtLtMfpqvgSq4bBiJHCW8t8HhY/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+          {nav.title}
+        </Link>
       ) : (
-        <span>{nav.title}</span>
+        <a href={`#${nav.id}`}>{nav.title}</a>
       )}
     </li>
   ))}
