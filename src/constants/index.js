@@ -19,7 +19,7 @@ import stocks from '../assets/stock.png'
 import front from '../assets/front.png'
 import code from '../assets/coding.png'
 import mysql from '../assets/tech/mysql.png'
-
+import cloud from '../assets/tech/cloud.png'
 
 
 export const navLinks = [
@@ -88,6 +88,10 @@ const technologies = [
   {
     name: "Tailwind CSS",
     icon: tailwind,
+  },
+  {
+    name: "Google Cloud",
+    icon: cloud,
   },
 ];
 
