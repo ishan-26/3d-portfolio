@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Tilt } from "react-tilt";
-import { motion } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "./hoc";
@@ -13,6 +13,10 @@ const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 50 }}
+      transition={{ duration: 0.5, delay: index * 0.3 }}
       className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
     >
       <div
@@ -38,6 +42,10 @@ const ServiceCard = ({ index, title, icon }) => (
 );
 
 const About = () => {
+  // Set up ref and in-view detection for the cards section
+  const cardsRef = useRef(null);
+  const isInView = useInView(cardsRef, { once: true, threshold: 0.25 });
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -57,20 +65,23 @@ const About = () => {
         </motion.p>
 
         {/* Photo Container */}
-        <div className="green-pink-gradient p-1 rounded-full ml-4"> {/* Increased padding to 2 for thicker border and added margin-left */}
+        <div className="green-pink-gradient p-1 rounded-full ml-4">
           <img
-            src={myPhoto} // Use the imported image
+            src={myPhoto}
             alt="My Photo"
-            className="w-64 h-64 rounded-full object-cover" // Maintain size and rounded shape
+            className="w-64 h-64 rounded-full object-cover"
           />
         </div>
       </div>
 
-
-      <div className='mt-20 flex flex-wrap gap-10'>
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
+      {/* Card section with AnimatePresence */}
+      <div ref={cardsRef} className="mt-20 flex flex-wrap gap-10">
+        <AnimatePresence>
+          {isInView &&
+            services.map((service, index) => (
+              <ServiceCard key={service.title} index={index} {...service} />
+            ))}
+        </AnimatePresence>
       </div>
     </>
   );
