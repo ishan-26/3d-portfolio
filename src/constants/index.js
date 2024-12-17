@@ -182,7 +182,7 @@ const projects = [
   {
     name: "Eventify",
     description:
-      "Coming Soon...",
+      "A college event management application to organize class-wise deadlines, assignments, and academic events with seamless access control and notifications.",
     tags: [
       {
         name: "react",
@@ -198,8 +198,8 @@ const projects = [
       },
     ],
     image: cal,
-    source_code_link: "",
-    deployed_link: " ",
+    source_code_link: "https://github.com/ishan-26/Eventify",
+    deployed_link: "https://eventify-git.vercel.app/",
 
   },
 ];
