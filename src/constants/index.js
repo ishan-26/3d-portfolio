@@ -182,7 +182,8 @@ const projects = [
   {
     name: "Eventify",
     description:
-      "A college event management application to organize class-wise deadlines, assignments, and academic events with seamless access control and notifications.",
+      "A college event management application to organize class-wise deadlines, assignments, and academic events with seamless access control and notifications." 
+      " ",
     tags: [
       {
         name: "react",
