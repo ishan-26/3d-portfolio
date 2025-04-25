@@ -95,6 +95,20 @@ const technologies = [
   },
 ];
 
+const work = [
+  {
+    title: "AI & BI Intern",
+    company_name: "Schneider Electric",
+    icon: se,
+    iconBg: "#383E56",
+    date: "January 2025 - Present",
+    points: [
+      "Tableau, Python, SQL, RPA",
+    ],
+  },
+];
+
+
 const experiences = [
   {
     title: "B.E in Computer Science & Engineering",
