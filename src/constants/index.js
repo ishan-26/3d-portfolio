@@ -20,6 +20,7 @@ import front from '../assets/front.png'
 import code from '../assets/coding.png'
 import mysql from '../assets/tech/mysql.png'
 import cloud from '../assets/tech/cloud.png'
+import se from '../assets/company/se.png'
 
 
 export const navLinks = [
