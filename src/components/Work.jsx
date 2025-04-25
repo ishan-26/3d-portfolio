@@ -65,9 +65,9 @@ const Work = () => {
 
       <div className='mt-20 flex flex-col'>
         <VerticalTimeline>
-          {experiences.map((experience, index) => (
+          {work.map((work, index) => (
             <WorkCard
-              key={`experience-${index}`}
+              key={`work-${index}`}
               experience={work}
             />
           ))}
