@@ -1,11 +1,6 @@
 import {
-  mobile,
-  web,
-  css,
   javascript,
-  html,
   reactjs,
-  tailwind,
 } from "../assets";
 
 import cpp from '../assets/tech/cpp.png'
@@ -19,8 +14,10 @@ import stocks from '../assets/stock.png'
 import front from '../assets/front.png'
 import code from '../assets/coding.png'
 import mysql from '../assets/tech/mysql.png'
-import cloud from '../assets/tech/cloud.png'
 import se from '../assets/company/se.png'
+import py from '../assets/company/py.png'
+import tab from '../assets/company/tab.png'
+import ui from '../assets/company/ui.png'
 
 
 export const navLinks = [
@@ -60,7 +57,20 @@ const services = [
 ];
 
 const technologies = [
+  {
+    name: "Tableau",
+    icon: tab,
+  },
+  {
+    name: "Python",
+    icon: py,
+  },
 
+ {
+    name: "UI Path",
+    icon: ui,
+  },
+  
   {
     name: "C++",
     icon: cpp,
@@ -68,14 +78,6 @@ const technologies = [
   {
     name: "React JS",
     icon: reactjs,
-  },
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
   },
   {
     name: "JavaScript",
@@ -86,15 +88,7 @@ const technologies = [
     name: "MySQL",
     icon: mysql,
   },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Google Cloud",
-    icon: cloud,
-  },
-];
+ 
 
 const work = [
   {
