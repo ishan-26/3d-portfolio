@@ -119,7 +119,7 @@ const experiences = [
     iconBg: "#383E56",
     date: "December 2021 - April 2025",
     points: [
-      "CGPA : 7.83",
+      "CGPA : 8.23",
     ],
   },
   {
