@@ -15,8 +15,9 @@ import front from '../assets/front.png'
 import code from '../assets/coding.png'
 import mysql from '../assets/tech/mysql.png'
 import se from '../assets/company/se.png'
-import tab from '../assets/company/tab.png'
-import ui from '../assets/company/ui.png'
+import tab from '../assets/tab.png'
+import ui from '../assets/ui.png'
+import mongo from '../assets/tech/mongodb.png'
 
 
 export const navLinks = [
@@ -60,10 +61,6 @@ const technologies = [
     name: "Tableau",
     icon: tab,
   },
- {
-    name: "UI Path",
-    icon: ui,
-  },
   
   {
     name: "C++",
@@ -81,6 +78,10 @@ const technologies = [
   {
     name: "MySQL",
     icon: mysql,
+  },
+  {
+    name: "MongoDB",
+    icon: mongo,
   },
   ]
 
