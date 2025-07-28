@@ -96,11 +96,23 @@ const work = [
     company_name: "Schneider Electric",
     icon: se,
     iconBg: "#383E56",
-    date: "January 2025 - Present",
+    date: "January 2025 - August 2025",
     points: [
-      "Tableau, Python, SQL, RPA",
+      "Tableau, Python, SQL, Informatica, NodeJS, MongoDB",
     ],
   },
+
+  {
+    title: "Graduate Engineer Trainee",
+    company_name: "Schneider Electric",
+    icon: se,
+    iconBg: "#383E56",
+    date: "Present",
+    points: [
+      "NodeJS, MongoDB, AWS, Salesforce",
+    ],
+  },
+  
 ];
 
 
