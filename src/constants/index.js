@@ -88,7 +88,7 @@ const technologies = [
     name: "MySQL",
     icon: mysql,
   },
- 
+  ]
 
 const work = [
   {
