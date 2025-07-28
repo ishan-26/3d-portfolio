@@ -15,7 +15,6 @@ import front from '../assets/front.png'
 import code from '../assets/coding.png'
 import mysql from '../assets/tech/mysql.png'
 import se from '../assets/company/se.png'
-import py from '../assets/company/py.png'
 import tab from '../assets/company/tab.png'
 import ui from '../assets/company/ui.png'
 
@@ -61,11 +60,6 @@ const technologies = [
     name: "Tableau",
     icon: tab,
   },
-  {
-    name: "Python",
-    icon: py,
-  },
-
  {
     name: "UI Path",
     icon: ui,
